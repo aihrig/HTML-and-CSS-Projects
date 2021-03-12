@@ -1,0 +1,93 @@
+ body {
+     background-color: slategrey;
+ }
+
+ h1 {
+     color: rgba(180, 182, 48, 0.6);
+     margin-left: 100px;
+     text-shadow: 2px 2px 2px #000;
+ }
+
+ .container {
+     width: 450px;
+     height: 450px;
+     background-color: antiquewhite;
+     border: 2px solid black;
+     border-radius: 5%;
+ }
+ 
+ /* Select all squares */
+ .container .squares:nth-child(-n+4) {
+     background-image: url("../images/smiley-eyes-closed.png");
+     color:#fff;
+     float: left;
+     width: 100px;
+     height: 100px;
+     margin: 5px;
+     border: 1px solid black;
+     border-radius: 25%;
+     cursor: pointer;
+     transition: transform 1.5 ease-in-out;
+ }
+
+ /* Select all squares' paragraph */
+ .squares:nth-child(-n+4) p {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 1.5em;
+     font-weight: 900;
+     text-align: center;
+     margin: 0;
+     text-shadow: 2px 1px 4px rgba(0,0,0, 0.8);
+ }
+
+ .squares:nth-child(1) {
+     background: purple;
+ }
+ 
+ .squares:nth-child(2) {
+     background: rgb(30, 0, 128);
+ }
+
+ .squares:nth-child(3) {
+     background: rgb(128, 0, 11);
+ }
+
+ .squares:nth-child(4) {
+     background: rgb(4, 128, 0);
+ }
+
+ /* Hover, transform, and transition effects */
+ .container .squares:nth-child(-n+4):hover {
+     background-image: url("../images/smiley-eyes-open.png");
+    transform:scale(.5);    
+    animation-name: race;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(2.5, 0.2, 0.3, 2);
+}
+
+ .squares:nth-child(1):hover {
+     background: rgb(255, 0, 255);
+ }
+ 
+ .squares:nth-child(2):hover {
+     background: rgb(60, 0, 255);
+ }
+
+ .squares:nth-child(3):hover {
+     background: rgb(255, 0, 21);
+ }
+
+ .squares:nth-child(4):hover {
+     background: rgb(9, 255, 0);
+ }
+
+/* Animation */
+@keyframes race {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(330px);
+    }
+}
